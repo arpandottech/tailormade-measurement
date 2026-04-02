@@ -260,11 +260,12 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Page: Admin Dashboard */
 .dashboard-container {
   padding: 2rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .dashboard-header {
