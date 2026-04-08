@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../utils/api';
 import { Camera, CheckCircle2 } from 'lucide-react';
 
 const MeasurementPage = () => {
@@ -73,7 +73,7 @@ const MeasurementPage = () => {
     setLoading(true);
     setError(null);
     try {
-      await axios.post('http://localhost:5000/api/measurements', formData);
+      await api.post('/api/measurements', formData);
       setSuccess(true);
       setFormData({
         customerName: '',

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { LogOut, Activity, Users, FileText, Search, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -21,11 +21,7 @@ const AdminDashboard = () => {
       }
 
       try {
-        const { data } = await axios.get('http://localhost:5000/api/measurements', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const { data } = await api.get('/api/measurements');
         setMeasurements(data);
         setLoading(false);
       } catch (err) {
